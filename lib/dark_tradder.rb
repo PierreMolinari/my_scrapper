@@ -20,10 +20,10 @@ def crypto_scrapper
 
     name_value = Hash.new 
     name_value = array_name.zip(array_value).to_h
-    return puts name_value
+    
 end
 
 
 def perform
-    return crypto_scrapper
+    return puts name_value
 end

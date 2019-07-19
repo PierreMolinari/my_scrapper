@@ -18,15 +18,13 @@ def get_cities_emails(cities_names)
   cities_array = Array.new
   for city in cities_names
     page = Nokogiri::HTML(open("http://annuaire-des-mairies.com/95/" + city))
-    #"https://www.annuaire-des-mairies.com/95/avernes.html"
+   
     city_email = page.css('tbody tr:nth-child(4) td:nth-child(2)')
-    #<td>mairie.avernes@orange.fr</td>
-    #<td>Avernois, Avernoises</td>
-    #<td>1148000</td>
+  
     city_email = city_email[0]
-    #<td>mairie.avernes@orange.fr</td>
+    
     cities_array << city_email.text
-    #mairie.avernes@orange.fr
+
   end
   return cities_array
 end
